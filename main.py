@@ -1,7 +1,7 @@
 from api.riot_api import get_puuid, get_match_history, get_match_details
+from bot import bot 
 
-
-def main():
+def test():
     print("🔍 Test API Riot Games")
 
     # Chiedi all'utente di inserire il nome e il tag del giocatore
@@ -53,4 +53,4 @@ def main():
         print(f"🏅 Esito: {win}\n")
 
 if __name__ == "__main__":
-    main()
+    bot.run()
