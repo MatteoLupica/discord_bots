@@ -6,9 +6,14 @@ DATA_FILE = "data.json"
 def load_data():
     if not os.path.exists(DATA_FILE):
         return {"players": {}, "matches": {}}
-    
-    with open(DATA_FILE, "r") as f:
-        return json.load(f)
+
+    try:
+        with open(DATA_FILE, "r") as f:
+            content = f.read().strip()
+            return json.loads(content) if content else {"players": {}, "matches": {}}
+    except json.JSONDecodeError:
+        return {"players": {}, "matches": {}}
+
 
 def save_data(data):
     with open(DATA_FILE, "w") as f:
