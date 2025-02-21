@@ -22,6 +22,3 @@ async def load_extensions():
 async def on_ready():
     await load_extensions()
     print("Registered commands:", [cmd.name for cmd in bot.commands])
-
-# Directly use bot.run() to start the bot.
-bot.run(DISCORD_TOKEN)
